@@ -1,0 +1,28 @@
+service: users4imart
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ap-south-1
+  lambdaHashingVersion: 20201221
+  environment:
+    APP_NAME: ${self:service}
+
+package:
+  patterns:
+    - '!.env'
+    - '!coverage/**'
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+functions:
+  nicename:
+    name: anothernicename
+    handler: src/app/handler.index
+    events:
+      - http:
+          path: /home
+          method: get
+
