@@ -14,7 +14,7 @@
     "isolatedModules": true,                               /* Allow JavaScript files to be a part of your program. Use the `checkJS` option to get errors from these files. */
     "strictPropertyInitialization":false,
     "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */
-    "outDir": "./dist", 
+    "outDir": ".build", 
     "allowSyntheticDefaultImports": true,             /* Allow 'import x from y' when a module doesn't have a default export. */
     "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */
     "forceConsistentCasingInFileNames": true, 
@@ -23,6 +23,9 @@
     "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "rootDir": "./"
   },
   "include": [
     "src/**/*"

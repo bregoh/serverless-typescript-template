@@ -10,8 +10,8 @@ provider:
 
 package:
   patterns:
-    - '!.env'
     - '!coverage/**'
+    - '!**/migrations'
 
 plugins:
   - serverless-plugin-typescript

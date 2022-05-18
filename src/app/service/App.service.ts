@@ -1,9 +1,20 @@
 import AppDto from '../dto/App.Dto';
-import Model from '../model';
+import { AppEntity } from '../entity/app-entity';
+import Model from '../../shared/model/Model';
+import { Repository } from 'typeorm';
+import DataSourceConfig from '../../data-source';
 
 export class AppService extends Model {
+    private repository: Repository<AppEntity>;
+
     constructor() {
         super();
+        this.repository = DataSourceConfig.getRepository(AppEntity);
+    }
+
+    async init() {
+        await this.modelConfig;
+        await this.repository;
     }
 
     async createLoan(data: AppDto): Promise<any> {
@@ -11,7 +22,8 @@ export class AppService extends Model {
     }
 
     async getAllLoan(): Promise<any> {
-        return null;
+        await this.init();
+        return await this.repository.find();
     }
 
     async getOneLoan(id: string): Promise<any> {
