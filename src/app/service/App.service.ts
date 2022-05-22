@@ -17,24 +17,24 @@ export class AppService extends Model {
         await this.repository;
     }
 
-    async createLoan(data: AppDto): Promise<any> {
+    async create(data: AppDto): Promise<any> {
         return null;
     }
 
-    async getAllLoan(): Promise<any> {
+    async getAll(): Promise<any> {
         await this.init();
         return await this.repository.find();
     }
 
-    async getOneLoan(id: string): Promise<any> {
+    async getOne(id: string): Promise<any> {
         return null;
     }
 
-    async updateLoan(id: string, data: any): Promise<any> {
+    async update(id: string, data: any): Promise<any> {
         return null;
     }
 
-    async deleteOneLoan(id: string): Promise<any> {
+    async deleteOne(id: string): Promise<any> {
         return null;
     }
 }
