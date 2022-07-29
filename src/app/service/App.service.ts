@@ -1,28 +1,25 @@
 import AppDto from '../dto/App.Dto';
-import { AppEntity } from '../entity/app-entity';
+import { User } from '../entity/user-entity';
 import Model from '../../shared/model/Model';
 import { Repository } from 'typeorm';
-import DataSourceConfig from '../../data-source';
 
-export class AppService extends Model {
-    private repository: Repository<AppEntity>;
+export class AppService {
+    private repository: Repository<User>;
 
-    constructor() {
-        super();
-        this.repository = DataSourceConfig.getRepository(AppEntity);
+    constructor(repository: Repository<User>) {
+        this.repository = repository;
     }
 
-    async init() {
-        await this.modelConfig;
-        await this.repository;
-    }
+    // async init() {
+    //     await this.modelConfig;
+    //     await this.repository;
+    // }
 
     async create(data: AppDto): Promise<any> {
         return null;
     }
 
     async getAll(): Promise<any> {
-        await this.init();
         return await this.repository.find();
     }
 
